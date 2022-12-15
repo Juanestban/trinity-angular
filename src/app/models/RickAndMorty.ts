@@ -8,11 +8,17 @@ export interface RickAndMortyAdapter {
   results: RickAndMorty[];
 }
 
+export type Status = 'Alive' | 'Dead' | 'unknown';
+export type Gender = 'Female' | 'Male' | 'Genderless' | 'unknown';
+
 export interface RickAndMorty {
   id?: number;
   name: string;
-  status: 'Alive' | 'Dead' | 'unknown';
+  status: Status;
   species: string;
-  gender: 'Female' | 'Male' | 'Genderless' | 'unknown';
+  gender: Gender;
   image: string;
 }
+
+export const STATUS: Status[] = ['Alive', 'Dead', 'unknown'];
+export const GENDERS: Gender[] = ['Female', 'Genderless', 'Male', 'unknown'];

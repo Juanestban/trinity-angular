@@ -1,0 +1,29 @@
+<form>
+  <div class="form-control">
+    <label for="name">name:</label>
+    <input id="name" name="name" [(ngModel)]="data.name">
+  </div>
+  <div class="form-control">
+    <label for="status">status:</label>
+    <select id="gender" name="gender" [(ngModel)]="data.gender">
+      <option *ngFor="let op of gendersOptions">{{op}}</option>
+      </select>
+  </div>
+  <div class="form-control">
+    <label for="image">image:</label>
+    <input id="image" name="image" [(ngModel)]="data.image">
+  </div>
+  <div class="form-control">
+    <label for="species">species:</label>
+    <input id="species" name="species" [(ngModel)]="data.species">
+  </div>
+  <div class="form-control">
+    <label for="status">status:</label>
+    <select id="status" name="status" [(ngModel)]="data.status">
+      <option *ngFor="let op of statusOptions">{{op}}</option>
+      </select>
+  </div>
+  <div class="form-control">
+    <button (click)="handleClick()">send</button>
+  </div>
+</form>
