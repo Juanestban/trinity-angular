@@ -1,1 +1,11 @@
-<p>form works!</p>
+<div style="display: flex; justify-content: center">
+  <app-register [data]="data" (onSave)="handleSave($event)"></app-register>
+</div>
+
+<button (click)="handleClear()">clear</button>
+<div style="display: flex; flex-wrap: wrap">
+  <app-card
+    *ngFor="let charapter of items"
+    [card]="charapter" (onClick)="handleClick($event)">
+  </app-card>
+</div>

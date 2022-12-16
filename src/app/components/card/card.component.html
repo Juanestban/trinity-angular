@@ -1,0 +1,13 @@
+<article class="card" (click)="handleClick()">
+  <div class="header">
+    <img [src]="card.image" [alt]="card.name + card.id">
+  </div>
+  <div class="body">
+    <h2>{{card.name}}</h2>
+    <div class="status">
+      <span class="round"
+        [ngClass]="{green: card.status === 'Alive', red: card.status === 'Dead', orange: card.status === 'unknown'}"></span>
+      <p>{{card.status}} - {{card.species}}</p>
+    </div>
+  </div>
+</article>
