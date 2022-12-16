@@ -9,9 +9,10 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './views/home/home.component';
 import { FormComponent } from './views/form/form.component';
 import { RegisterComponent } from './components/register/register.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, FormComponent, RegisterComponent],
+  declarations: [AppComponent, HomeComponent, FormComponent, RegisterComponent, CardComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

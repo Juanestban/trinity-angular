@@ -18,4 +18,6 @@ export class HomeComponent implements OnInit {
       this.cards = res.results;
     });
   }
+
+  handleClick = (data: RickAndMorty) => console.log(data);
 }

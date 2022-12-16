@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { RickAndMorty, STATUS, GENDERS } from 'src/app/models/RickAndMorty';
 import { RickAndMortyService } from 'src/app/services/RickAndMorty/rick-and-morty.service';
 
@@ -8,13 +8,14 @@ import { RickAndMortyService } from 'src/app/services/RickAndMorty/rick-and-mort
   styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
-  data: RickAndMorty = {
+  @Input() data: RickAndMorty = {
     name: '',
     gender: 'unknown',
     image: '',
     species: '',
     status: 'unknown',
   };
+  @Output() onSave = new EventEmitter<RickAndMorty>();
   statusOptions = STATUS;
   gendersOptions = GENDERS;
 
@@ -23,5 +24,6 @@ export class RegisterComponent {
   handleClick = () => {
     console.log(this.data);
     this.rickAndMortyService.create(this.data);
+    this.onSave.emit(this.data);
   };
 }
